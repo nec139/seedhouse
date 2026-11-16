@@ -1,0 +1,21 @@
+name = "insta-autodm"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+GRAPH_VERSION = "v23.0"
+# IG_USER_ID = "인스타 계정 ID (비워두면 웹훅의 entry.id 사용)"
+
+# 토큰 자동 갱신용 KV (README 3단계에서 id 채우기)
+[[kv_namespaces]]
+binding = "TOKENS"
+id = "REPLACE_WITH_KV_ID"
+
+# 매주 월요일 03:00 UTC 토큰 갱신
+[triggers]
+crons = ["0 3 * * 1"]
+
+# 비밀값은 여기 쓰지 말고 아래 명령으로 등록:
+#   npx wrangler secret put APP_SECRET
+#   npx wrangler secret put VERIFY_TOKEN
+#   npx wrangler secret put IG_ACCESS_TOKEN

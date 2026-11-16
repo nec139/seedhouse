@@ -1,0 +1,4 @@
+# GitHub Pages: 서버 코드 폴더는 사이트에 공개하지 않음
+exclude:
+  - insta-autodm
+  - README.md
